@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.lms.services">
+	<author>Yogesh</author>
+	<namespace>LMS</namespace>
+
+	<entity name="DocumentDetails" local-service="true" remote-service="false" table="document_details">
+
+		<!-- PK fields -->
+
+		<column name="documentId" type="long" primary="true" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="title" type="String" />
+		<column name="authors" type="String" />
+		<column name="documentType" type="String" />
+		<column name="keywords" type="String" />
+		<column name="notes" type="String" />
+		<column name="linkSurveys" type="String" />
+		<column name="fileName" type="String" />
+		<column name="folderId" type="long" />
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="folderId" return-type="Collection">
+			<finder-column name="folderId" />
+		</finder>
+	</entity>
+</service-builder>
